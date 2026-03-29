@@ -1,12 +1,9 @@
-# Yemen Health Cluster Website - Final Updated Package
+# Yemen Health Cluster Website - Restored Styled Version
 
-Updates included:
-- Removed the extra top button
-- Update cycle changed to Monthly
-- Key figures moved above the HRP section
-- Added detailed contact table
-- Updated contact email and phone
-- Removed requested helper lines
-- Larger unboxed logo placeholder at the top
-
-Deploy by replacing the files in GitHub and letting Vercel redeploy.
+This package restores the earlier polished styling and includes:
+- original Health Cluster-inspired color palette
+- dashboard section with iframe and fallback link
+- key figures in a 3-column grid
+- reference document above team
+- team cards with email and phone
+- contact section without the table
