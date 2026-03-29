@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yemen Health Cluster</title>
+  <meta name="description" content="Yemen Health Cluster website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --hc-blue:#009fe3;
+      --hc-black:#1d1d1b;
+      --hc-gray:#dadada;
+      --soft-blue:#eaf7fd;
+      --soft-gray:#f7f7f7;
+      --white:#ffffff;
+      --text:#334155;
+      --radius:28px;
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      color:var(--hc-black);
+      background:#fff;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .hero{
+      border-bottom:1px solid var(--hc-gray);
+      background:linear-gradient(135deg,#fff 0%, rgba(218,218,218,.35) 25%, rgba(0,159,227,.14) 100%);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:40px;
+      padding:64px 0;
+      align-items:start;
+    }
+    .logo-wrap{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .logo-box{
+      width:72px;height:72px;border-radius:20px;background:#fff;border:1px solid var(--hc-gray);
+      display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);overflow:hidden;
+      flex-shrink:0;
+    }
+    .eyebrow{
+      font-size:12px;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--hc-blue)
+    }
+    h1{font-size:48px;line-height:1.08;margin:8px 0 0}
+    .tagline{font-size:22px;color:#475569;max-width:760px}
+    .bar{width:132px;height:6px;background:var(--hc-blue);border-radius:999px;margin:24px 0}
+    .description{font-size:17px;color:#475569;max-width:820px;white-space:pre-line}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:18px;
+      font-weight:700;font-size:14px;border:1px solid transparent;
+    }
+    .btn-primary{background:var(--hc-blue);color:#fff}
+    .btn-secondary{border-color:var(--hc-black);color:var(--hc-black);background:#fff}
+    .stat-list{display:grid;gap:16px}
+    .stat{
+      border:1px solid var(--hc-gray); background:#fff; border-radius:24px; padding:24px; box-shadow:var(--shadow)
+    }
+    .stat-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#64748b}
+    .stat-value{font-size:38px;font-weight:800;color:var(--hc-blue);margin-top:10px}
+    main{padding:64px 0}
+    .section{margin-top:72px}
+    .section:first-child{margin-top:0}
+    h2{font-size:36px;line-height:1.15;margin:10px 0 0}
+    .subtext{color:#475569;max-width:760px}
+    .resource-box{
+      display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;
+      border:1px solid var(--hc-gray);border-radius:28px;padding:24px 26px;background:var(--soft-blue);box-shadow:var(--shadow)
+    }
+    .team-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:24px
+    }
+    .team-card{
+      overflow:hidden;border-radius:28px;border:1px solid var(--hc-gray);background:#fff;box-shadow:var(--shadow)
+    }
+    .team-photo{
+      height:120px;display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg, rgba(0,159,227,.12), rgba(0,159,227,.28));
+      color:var(--hc-blue);font-size:34px;font-weight:800;letter-spacing:.04em
+    }
+    .team-body{padding:22px}
+    .role{font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--hc-blue)}
+    .bio{color:#475569;font-size:14px}
+    .metrics-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:22px
+    }
+    .metric{
+      border:1px solid var(--hc-gray);border-radius:28px;background:#fff;padding:24px;box-shadow:var(--shadow);
+      display:flex;gap:16px;align-items:flex-start
+    }
+    .metric-icon{
+      width:58px;height:58px;border-radius:16px;background:var(--soft-blue);color:var(--hc-blue);
+      display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0
+    }
+    .metric-value{font-size:22px;font-weight:800;line-height:1.15}
+    .metric-label{font-size:14px;font-weight:700;line-height:1.25}
+    .metric-note{font-size:13px;color:#64748b;margin-top:4px}
+    .edit-note{
+      margin-top:16px;font-size:14px;color:#475569;background:var(--soft-gray);
+      padding:14px 18px;border-radius:18px
+    }
+    .dash-shell{
+      overflow:hidden;border:1px solid var(--hc-gray);border-radius:32px;background:#fff;box-shadow:var(--shadow)
+    }
+    .dash-head{
+      display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 20px;
+      background:var(--soft-blue);border-bottom:1px solid var(--hc-gray)
+    }
+    .dash-frame{aspect-ratio:16/9;background:#f1f5f9}
+    iframe{border:0;width:100%;height:100%}
+    .cta-grid{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:24px
+    }
+    .cta{
+      border-radius:32px;padding:32px;color:#fff;
+      background:linear-gradient(135deg, var(--hc-black) 0%, var(--hc-blue) 100%);
+      box-shadow:var(--shadow)
+    }
+    .contact{
+      border:1px solid var(--hc-gray);border-radius:32px;padding:32px;box-shadow:var(--shadow)
+    }
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .contact-box{background:var(--soft-gray);padding:18px;border-radius:20px}
+    .small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#64748b}
+    footer{
+      border-top:1px solid var(--hc-gray);padding:24px 0;color:#64748b;font-size:14px
+    }
+    .footer-wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media (max-width: 980px){
+      h1{font-size:38px}
+      .hero-grid,.cta-grid,.team-grid,.metrics-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="logo-wrap">
+          <div class="logo-box">
+            <img src="./logo-placeholder.svg" alt="Health Cluster logo placeholder" />
+          </div>
+          <div>
+            <div class="eyebrow">Health Cluster</div>
+            <h1>Yemen Health Cluster</h1>
+          </div>
+        </div>
+        <p class="tagline">Coordinating humanitarian health action in Yemen</p>
+        <div class="bar"></div>
+        <p class="description">Even before the current conflict escalated in mid-March 2015, Yemen faced enormous levels of humanitarian needs stemming from years of poverty, under-development, environmental decline, intermittent conflict, and weak rule of law. Two years of intense conflict, as well as recent famine and cholera, has put millions at risk. The health system is collapsing under conflict, and the violence itself is injuring and killing civilians.
+
+The Health Cluster has identified ten specific areas of intervention, including priority public health concerns such as reproductive health services, immunization, communicable disease management, disease surveillance and trauma care.
+
+The information displayed here is updated in reference to the Health Cluster dashboard, in quarterly periods.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#dashboard">View Dashboard</a>
+          <a class="btn btn-secondary" href="https://reliefweb.int/report/yemen/yemen-humanitarian-needs-and-response-plan-2026-march-2026" target="_blank" rel="noreferrer">Yemen: Humanitarian Response Plan 2026</a>
+          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/15Avp4P2IXD0N3HK9vCugsA7AQU28vK04yFdDXc5ESS8/viewform?edit_requested=true" target="_blank" rel="noreferrer">Join Mailing List</a>
+        </div>
+      </div>
+      <div class="stat-list">
+        <div class="stat">
+          <div class="stat-label">Partners</div>
+          <div class="stat-value">65</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Coverage</div>
+          <div class="stat-value">333 Districts</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Update Cycle</div>
+          <div class="stat-value">Quarterly</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="resource-box">
+        <div>
+          <div class="eyebrow">Reference Document</div>
+          <h2>Yemen: Humanitarian Response Plan 2026</h2>
+          <p class="subtext">Added as requested for quick access from the website.</p>
+        </div>
+        <a class="btn btn-primary" href="https://reliefweb.int/report/yemen/yemen-humanitarian-needs-and-response-plan-2026-march-2026" target="_blank" rel="noreferrer">Open document</a>
+      </div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="eyebrow">Our Team</div>
+      <h2>Meet the Yemen Health Cluster team</h2>
+      <p class="subtext">You can later replace the initials placeholders with team photos whenever ready.</p>
+      <div class="team-grid">
+        <article class="team-card"><div class="team-photo">KO</div><div class="team-body"><h3>Dr. Kamal Olleri</h3><div class="role">National Health Cluster Coordinator</div></div></article>
+        <article class="team-card"><div class="team-photo">SK</div><div class="team-body"><h3>Dr. Sardar Khan</h3><div class="role">National Health Cluster Coordinator - Aden AOR</div></div></article>
+        <article class="team-card"><div class="team-photo">FO</div><div class="team-body"><h3>Dr. Fouad Othman</h3><div class="role">Sub-National Health Cluster Coordinator</div></div></article>
+        <article class="team-card"><div class="team-photo">AZ</div><div class="team-body"><h3>Dr. Abdullah Al-Zuhairi</h3><div class="role">Sub-National Health Cluster Coordinator - Al Hudaydah Hub</div></div></article>
+        <article class="team-card"><div class="team-photo">MB</div><div class="team-body"><h3>Dr. Manal Baaees</h3><div class="role">Sub-National Health Cluster Coordinator - Aden Hub</div></div></article>
+        <article class="team-card"><div class="team-photo">KB</div><div class="team-body"><h3>Dr. Khalil Bamatraf</h3><div class="role">Sub-National Health Cluster Coordinator - Al Mukalla Hub</div></div></article>
+        <article class="team-card"><div class="team-photo">AS</div><div class="team-body"><h3>Adel Salem</h3><div class="role">Information Management Officer</div></div></article>
+        <article class="team-card"><div class="team-photo">AB</div><div class="team-body"><h3>Adeeb Beshr</h3><div class="role">Information Management Officer</div></div></article>
+        <article class="team-card"><div class="team-photo">HR</div><div class="team-body"><h3>Hashim Al Refai</h3><div class="role">Information Management Officer</div></div></article>
+        <article class="team-card"><div class="team-photo">MA</div><div class="team-body"><h3>Mohammed Alhumaidi</h3><div class="role">Liaison Officer</div></div></article>
+        <article class="team-card"><div class="team-photo">SM</div><div class="team-body"><h3>Saydah Madhkor</h3><div class="role">Admin Assistant</div></div></article>
+      </div>
+    </section>
+
+    <section class="section" id="figures">
+      <div class="eyebrow">Key Figures</div>
+      <h2>Editable response figures</h2>
+      <p class="subtext">This section recreates the second snapshot as editable website cards, so you can amend the numbers directly in <code>index.html</code> later.</p>
+      <div class="metrics-grid">
+        <div class="metric">
+          <div class="metric-icon">👥</div>
+          <div>
+            <div class="metric-value">19.6 million</div>
+            <div class="metric-label">People in Need</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">💰</div>
+          <div>
+            <div class="metric-value">US$171.6 million requested</div>
+            <div class="metric-note">reduced from 261M</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">📅</div>
+          <div>
+            <div class="metric-value">2011</div>
+            <div class="metric-label">year activated</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">⬇️</div>
+          <div>
+            <div class="metric-value">7 million</div>
+            <div class="metric-label">People Targeted</div>
+            <div class="metric-note">reduced from 10.5M</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">💵</div>
+          <div>
+            <div class="metric-value">48% funded</div>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="metric-icon">🤝</div>
+          <div>
+            <div class="metric-value">Co-coordinator</div>
+          </div>
+        </div>
+      </div>
+      <div class="edit-note">
+        To amend these numbers later, open <strong>index.html</strong> and search for the section id <strong>figures</strong>. Each figure is written as plain text for quick editing.
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="eyebrow">Dashboard</div>
+      <h2>Health Cluster dashboard</h2>
+      <p class="subtext">The Power BI link is embedded below.</p>
+      <div class="dash-shell">
+        <div class="dash-head">
+          <div>
+            <strong>Embedded dashboard</strong><br />
+            <span style="color:#64748b;font-size:12px">Power BI live window</span>
+          </div>
+          <a class="btn btn-primary" href="https://app.powerbi.com/view?r=eyJrIjoiMWVmMzJmYTAtYThiOC00NjRkLWE5YmEtYjRlMzNiYmU3ZDVkIiwidCI6ImY2MTBjMGI3LWJkMjQtNGIzOS04MTBiLTNkYzI4MGFmYjU5MCIsImMiOjh9" target="_blank" rel="noreferrer">Open in new tab</a>
+        </div>
+        <div class="dash-frame">
+          <iframe title="Yemen Health Cluster Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiMWVmMzJmYTAtYThiOC00NjRkLWE5YmEtYjRlMzNiYmU3ZDVkIiwidCI6ImY2MTBjMGI3LWJkMjQtNGIzOS04MTBiLTNkYzI4MGFmYjU5MCIsImMiOjh9" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-grid">
+      <div class="cta">
+        <div class="eyebrow" style="color:rgba(255,255,255,.75)">Stay Connected</div>
+        <h2 style="color:#fff">Join the mailing list</h2>
+        <p>Use the official form below for subscriptions and updates.</p>
+        <a class="btn btn-secondary" style="margin-top:12px" href="https://docs.google.com/forms/d/15Avp4P2IXD0N3HK9vCugsA7AQU28vK04yFdDXc5ESS8/viewform?edit_requested=true" target="_blank" rel="noreferrer">Subscribe now</a>
+      </div>
+      <div class="contact">
+        <div class="eyebrow">Contact</div>
+        <h2>Contact information</h2>
+        <p class="subtext">These are placeholders until you send the official details.</p>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <div class="small">Email</div>
+            <div><a href="mailto:healthcluster@example.org">healthcluster@example.org</a></div>
+          </div>
+          <div class="contact-box">
+            <div class="small">Phone</div>
+            <div><a href="tel:+967000000000">+967 XX XXX XXXX</a></div>
+          </div>
+          <div class="contact-box">
+            <div class="small">Location</div>
+            <div>Yemen</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 Yemen Health Cluster. All rights reserved.</div>
+      <div>Styled with Health Cluster-inspired colors.</div>
+    </div>
+  </footer>
+</body>
+</html>
